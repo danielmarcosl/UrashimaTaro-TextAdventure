@@ -39,6 +39,8 @@ public class TextController : MonoBehaviour {
 		Debug.Log (myState);
 	}
 
+	#region States
+
 	void state_title () {
 		text.text = "Urashima Taro, the folk tale\n\n" +
 			"Press Space to start.";
@@ -172,4 +174,6 @@ public class TextController : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.Space)) {myState = States.title;}
 	}
+
+	#endregion States
 }
