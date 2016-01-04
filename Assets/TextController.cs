@@ -6,7 +6,8 @@ public class TextController : MonoBehaviour {
 
 	public Text text;
 
-	private enum States {title, watching_turtle, watching_turtle_detected, boat_saving_turtle, boat_without_saving_turtle, boat_without_saving_turtle_detected, palace_saving_turtle,
+	private enum States {
+		title, watching_turtle, watching_turtle_detected, boat_saving_turtle, boat_without_saving_turtle, boat_without_saving_turtle_detected, palace_saving_turtle,
 		palace_without_saving_turtle, palace_decision, palace_stay, palace_leave, outside_01, outside_02, outside_open_box, outside_not_open_box, credits};
 
 	private States myState;
@@ -42,9 +43,7 @@ public class TextController : MonoBehaviour {
 		text.text = "Urashima Taro, the folk tale\n\n" +
 			"Press Space to start.";
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			myState = States.watching_turtle;
-		}
+		if (Input.GetKeyDown (KeyCode.Space)) {myState = States.watching_turtle;}
 	}
 
 	void state_watching_turtle () {
@@ -54,13 +53,9 @@ public class TextController : MonoBehaviour {
 			"Press 2 for keep watching the torture.\n" +
 			"Press 3 for leave without do nothing.";
 
-		if (Input.GetKeyDown (KeyCode.Alpha1)) {
-			myState = States.boat_saving_turtle;
-		} else if (Input.GetKeyDown (KeyCode.Alpha2)) {
-			myState = States.watching_turtle_detected;
-		} else if (Input.GetKeyDown (KeyCode.Alpha3)) {
-			myState = States.boat_without_saving_turtle;
-		}
+		if (Input.GetKeyDown (KeyCode.Alpha1)) {myState = States.boat_saving_turtle;}
+		else if (Input.GetKeyDown (KeyCode.Alpha2)) {myState = States.watching_turtle_detected;}
+		else if (Input.GetKeyDown (KeyCode.Alpha3)) {myState = States.boat_without_saving_turtle;}
 	}
 
 	void state_watching_turtle_detected () {
@@ -69,11 +64,8 @@ public class TextController : MonoBehaviour {
 			"Press 1 for save the turtle.\n" +
 			"Press 2 for leave without do nothing.";
 
-		if (Input.GetKeyDown (KeyCode.Alpha1)) {
-			myState = States.boat_saving_turtle;
-		} else if (Input.GetKeyDown (KeyCode.Alpha2)) {
-			myState = States.boat_without_saving_turtle_detected;
-		}
+		if (Input.GetKeyDown (KeyCode.Alpha1)) {myState = States.boat_saving_turtle;}
+		else if (Input.GetKeyDown (KeyCode.Alpha2)) {myState = States.boat_without_saving_turtle_detected;}
 	}
 
 	void state_boat_saving_turtle () {
@@ -82,9 +74,7 @@ public class TextController : MonoBehaviour {
 			"who wants to see him to thanks him. The turtle magically gives Taro gills and brings him to the bottom of the sea, to the palace of the Dragon God.\n\n" + 
 			"Press Space to continue.";
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			myState = States.palace_saving_turtle;
-		}
+		if (Input.GetKeyDown (KeyCode.Space)) {myState = States.palace_saving_turtle;}
 	}
 
 	void state_boat_without_saving_turtle () {
@@ -93,9 +83,7 @@ public class TextController : MonoBehaviour {
 			"who wants to torture him like him watched his daughter be tortured. The turtle magically gives Taro gills and brings him to the bottom of the sea, to the palace of the Dragon God.\n\n" +
 			"Press Space to continue.";
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			myState = States.palace_without_saving_turtle;
-		}
+		if (Input.GetKeyDown (KeyCode.Space)) {myState = States.palace_without_saving_turtle;}
 	}
 
 	void state_boat_without_saving_turtle_detected () {
@@ -104,27 +92,21 @@ public class TextController : MonoBehaviour {
 			"who wants to torture him like him watched his daughter be tortured. The turtle magically gives Taro gills and brings him to the bottom of the sea, to the palace of the Dragon God.\n\n" +
 			"Press Space to continue.";
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			myState = States.palace_without_saving_turtle;
-		}
+		if (Input.GetKeyDown (KeyCode.Space)) {myState = States.palace_without_saving_turtle;}
 	}
 
 	void state_palace_saving_turtle () {
 		text.text = "Taro meets the Emperor and the small turtle, who was now a lovely princess, Otohime, and they thanks to Taro for save her for the group of children.\n\n" +
 			"Press Space to continue.";
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			myState = States.palace_decision;
-		}
+		if (Input.GetKeyDown (KeyCode.Space)) {myState = States.palace_decision;}
 	}
 
 	void state_palace_without_saving_turtle () {
 		text.text = "Taro meets the Emperor, who throws him to an abysm where a group of turtles torture him for the rest of his life.\n\n" +
 			"Press Space to finish the folk tale.";
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			myState = States.credits;
-		}
+		if (Input.GetKeyDown (KeyCode.Space)) {myState = States.credits;}
 	}
 
 	void state_palace_decision () {
@@ -133,20 +115,15 @@ public class TextController : MonoBehaviour {
 			"Press 1 for stay in the palace.\n" +
 			"Press 2 for leave the palace.";
 
-		if (Input.GetKeyDown (KeyCode.Alpha1)) {
-			myState = States.palace_stay;
-		} else if (Input.GetKeyDown (KeyCode.Alpha2)) {
-			myState = States.palace_leave;
-		}
+		if (Input.GetKeyDown (KeyCode.Alpha1)) {myState = States.palace_stay;} 
+		else if (Input.GetKeyDown (KeyCode.Alpha2)) {myState = States.palace_leave;}
 	}
 
 	void state_palace_stay () {
 		text.text = "Taro stay in the palace with Otohime, they had little turtles and live happy forever.\n\n" +
 			"Press Space to finish the folk tale.";
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			myState = States.credits;
-		}
+		if (Input.GetKeyDown (KeyCode.Space)) {myState = States.credits;}
 	}
 
 	void state_palace_leave () {
@@ -154,9 +131,7 @@ public class TextController : MonoBehaviour {
 			"Taro grabs the box, jumps on the back of the same turtle that had brought him there, and soon is at the seashore.\n\n" +
 			"Press Space to continue.";
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			myState = States.outside_01;
-		}
+		if (Input.GetKeyDown (KeyCode.Space)) {myState = States.outside_01;}
 	}
 
 	void state_outside_01 () {
@@ -165,9 +140,7 @@ public class TextController : MonoBehaviour {
 			"He discovers that 300 years have passed since the day he left for the bottom of the sea.\n\n" +
 			"Press Space to continue.";
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			myState = States.outside_02;
-		}
+		if (Input.GetKeyDown (KeyCode.Space)) {myState = States.outside_02;}
 	}
 
 	void state_outside_02 () {
@@ -175,11 +148,8 @@ public class TextController : MonoBehaviour {
 			"Press 1 to open the box.\n"+
 			"Press 2 to do not open the box.";
 
-		if (Input.GetKeyDown (KeyCode.Alpha1)) {
-			myState = States.outside_open_box;
-		} else if (Input.GetKeyDown (KeyCode.Alpha2)) {
-			myState = States.outside_not_open_box;
-		}
+		if (Input.GetKeyDown (KeyCode.Alpha1)) {myState = States.outside_open_box;}
+		else if (Input.GetKeyDown (KeyCode.Alpha2)) {myState = States.outside_not_open_box;}
 	}
 
 	void state_outside_open_box () {
@@ -187,25 +157,19 @@ public class TextController : MonoBehaviour {
 			"and his back bent. From the sea comes the sad, sweet voice of the princess: \"I told you not to open that box. In it was your old age ...\"\n" +
 			"Press Space to finish the folk tale.";
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			myState = States.credits;
-		}
+		if (Input.GetKeyDown (KeyCode.Space)) {myState = States.credits;}
 	}
 
 	void state_outside_not_open_box () {
 		text.text = "Taro return to the bottom of the sea with Otohime, they had little turtles and live happy forever.\n\n" +
 			"Press Space to finish the folk tale.";
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			myState = States.credits;
-		}
+		if (Input.GetKeyDown (KeyCode.Space)) {myState = States.credits;}
 	}
 
 	void state_credits () {
 		text.text = "Game Developer: Daniel Marcos\n\nThanks for play it!\n\nPress Space to return to the title.";
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			myState = States.title;
-		}
+		if (Input.GetKeyDown (KeyCode.Space)) {myState = States.title;}
 	}
 }
