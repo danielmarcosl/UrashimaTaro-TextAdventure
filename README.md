@@ -1,2 +1,13 @@
-# UrashimaTaro-TextAdventure
-Short text adventure of the folk tale of Urashima Tarō made with Unity 5.3.1
+# Urashima Taro - Text Adventure
+
+##Description
+
+Short text adventure of the japanese folk tale Urashima Taro.
+
+##Tecnologies used
+- Unity 5.3.1
+- MonoDevelop 5.9.6
+
+##Algorithms
+
+![alt graph](./readme-images/graph.png)
